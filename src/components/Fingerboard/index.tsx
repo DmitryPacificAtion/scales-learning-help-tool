@@ -1,9 +1,13 @@
 import React from 'react';
 import './styles.scss';
+import Flat from '../Flat';
 
-const Fingerboard = (config) => {
-    console.log('config', config);
-    return (<div className="fingerboard" />);
-}
+const Fingerboard = () => (
+    <div className="fingerboard">
+        <Flat />
+        <Flat />
+        <Flat />
+    </div>
+);
 
 export default Fingerboard;

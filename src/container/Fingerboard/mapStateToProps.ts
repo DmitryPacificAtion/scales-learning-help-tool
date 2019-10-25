@@ -1,4 +1,4 @@
-export default (state = defaultState, props) => ({
-    instrument,
-})
+// export default (state = defaultState, props) => ({
+//     instrument,
+// })
   

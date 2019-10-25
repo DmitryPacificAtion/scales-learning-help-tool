@@ -1,0 +1,10 @@
+.string {
+    background-color: bisque;
+    height: 50px;
+    width: 75px;
+    border-bottom: 1px solid black;
+    box-sizing: border-box;
+}
+.string:first-child {
+    border-top: 1px solid black;
+}

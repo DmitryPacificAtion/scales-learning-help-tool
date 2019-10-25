@@ -1,5 +1,5 @@
 import React from 'react';
-import Fingerboard from '../container/Fingerboard';
+import Fingerboard from '../../components/Fingerboard';
 import './styles.scss';
 
 const App = () => (
