@@ -7,6 +7,9 @@ const Fingerboard = () => (
         <Flat />
         <Flat />
         <Flat />
+        <Flat />
+        <Flat />
+        <Flat />
     </div>
 );
 
