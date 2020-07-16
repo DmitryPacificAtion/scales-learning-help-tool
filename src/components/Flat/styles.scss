@@ -1,9 +1,14 @@
 .flat {
     border-right: 3px solid silver;
     box-sizing: border-box;
+    background-color: bisque;
+    width: 100%;
+    max-width: 75px;
+    box-sizing: border-box;
 }
 .flat:nth-child(3n) {
     position: relative;
+    &:before,
     &:after {
         content: '';
         position: absolute;
@@ -14,5 +19,14 @@
         height: 16px;
         top: calc(50% - 8px);
         left: calc(50% - 8px);
+    }
+}
+.flat:nth-child(12n) {
+    &:after {
+        top: 64px;
+    }
+    &:before {
+        top: auto;
+        bottom: 64px;
     }
 }

@@ -1,10 +1,10 @@
 import React from 'react';
 import './styles.scss';
 
-const String = props => {
+const String = ({ string }) => {
     return (
         <div className="string">
-            {props.name}
+            {string.value}
         </div>
     );
 }

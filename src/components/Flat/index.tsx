@@ -2,8 +2,8 @@ import React from 'react';
 import './styles.scss';
 import String from '../String';
 
-const Flat = () => {
-    const defaultStrings = [{
+const Flat = ({ width }) => {
+    const emptyStrings = [{
         key: 'E',
         value: 'E',
     }, {
@@ -25,9 +25,9 @@ const Flat = () => {
     ];
 
     return (
-        <div className="flat">
+        <div className="flat" style={{ width }}>
             {
-                defaultStrings.map(string => <String key={string.value} string={string} />)
+                emptyStrings.map(string => <String key={string.value} string={string} />)
             }
         </div>
     );
