@@ -34,15 +34,15 @@ const zeroFlat = [
 const Fingerboard = () => {
   const flats = new Array(TOTAL_FRETS);
   var i = 1;
-  const flatConfig = zeroFlat.map(param => ({
-    key: (i % 11) + param.key,
-    value: GLOBAL_CONFIG[(i % 11) + param.key].normal,
-  }));
-  console.log('flatConfig', flatConfig);
-  
+
   for (var width = 75; i <= TOTAL_FRETS; i++, width--) {
+    const flatConfig = zeroFlat.map(str => ({
+      key: (i % 12) + str.key,
+      value: GLOBAL_CONFIG[(i + str.key) % 12].normal
+    }));
     flats.push(<Flat key={i} id={i} width={width} config={flatConfig} />);
   }
+
   return (
     <div className="fingerboard">
       <ZeroFlat config={zeroFlat} />
