@@ -70,7 +70,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: "Scalse masrer",
+      title: "Scalse master",
       filename: "index.html",
       template: "./index.html",
       inject: "body",
