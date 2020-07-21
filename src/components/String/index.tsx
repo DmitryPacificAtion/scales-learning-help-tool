@@ -4,7 +4,7 @@ import './styles.scss';
 const String = ({ string }) => {
     return (
         <div className="string">
-            <span className="string--value">{string.value}</span>
+            <span className="string__value">{string}</span>
         </div>
     );
 }
