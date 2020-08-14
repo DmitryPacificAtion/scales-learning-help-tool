@@ -7,7 +7,7 @@
   "private": true,
   "license": "ISC",
   "scripts": {
-    "serve": "node server.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "@types/react": "16.8.22",
