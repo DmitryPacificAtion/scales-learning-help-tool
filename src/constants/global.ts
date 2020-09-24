@@ -59,7 +59,7 @@ export const GLOBAL_CONFIG = {
     },
 }
 
-export const ZERO_FLAT = [
+export const ZERO_FRET = [
     {
         key: 4,
         value: GLOBAL_CONFIG[4].normal,
@@ -95,10 +95,10 @@ export const ZERO_FLAT = [
 
 export const CHROMATIC_SCALE: any[] = [];
 for (var i = 0; i <= TOTAL_FRETS; i++) {
-    const flat = ZERO_FLAT.map(str => ({
+    const fret = ZERO_FRET.map(str => ({
         key: (i % 12) + str.key,
         value: GLOBAL_CONFIG[(i + str.key) % 12].normal,
         active: GLOBAL_CONFIG[(i + str.key) % 12].active,
     }));
-    CHROMATIC_SCALE.push(flat);
+    CHROMATIC_SCALE.push(fret);
 };
