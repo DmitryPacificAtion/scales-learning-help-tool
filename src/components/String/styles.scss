@@ -2,10 +2,13 @@
     height: 50px;
     width: 100%;
     display: flex;
-    border-bottom: 1px solid black;
     box-sizing: border-box;
     position: relative;
-}
-.string:first-child {
-    border-top: 1px solid black;
+
+    .fret {
+        border-bottom: 1px solid black;
+    }
+    &:first-child > .fret {
+        border-top: 1px solid black;
+    }
 }

@@ -1,28 +1,28 @@
 import React from 'react';
 import './styles.scss';
-import { Fret, IFrets } from '../Fret';
-import { TOTAL_FRETS, CHROMATIC_SCALE } from 'src/constants/global';
+import { Fret, IFret } from '../Fret';
+import { TOTAL_FRETS } from '../../constants/global';
 
 interface IStringEntity {
-    config: IFrets[];
     id: number;
-    width: number;
-    zero?: boolean;
-    active?: boolean;
-    value: string;
+    config: IFret[];
 }
 
 const frets = new Array(TOTAL_FRETS);
-for (var i = 0, width = 76; i <= TOTAL_FRETS; i++, width--) {
-    frets.push(<Fret key={i + 'S'} width={width} zero={i === 0} config={CHROMATIC_SCALE} />);
+for (var i = 0; i <= TOTAL_FRETS; i++) {
+    frets.push(<Fret key={i + 'S'} zero={i === 0} id={i + 'F'} value={1} />);
 }
 
-export const StringEntity: IStringEntity= ({ id, config }) => (
-    <div className="string">
-        {config.map((string, num) => (
-            <StringEntity key={`${zero ? 0 : id}F+${num}S`} {...string} />
-        ))}
-        {(id, width, (active = false), (zero = false), value)}
-        <div className={`string__value ${active && 'string__value--selected'}`}>{value}</div>
-    </div>
-);
+export const StringEntity: IStringEntity = ({ id, config }) => {
+    console.log('StringEntity', config);
+
+    return (
+        <div className="string">
+            {config.map(({ key, value, active }, num) => (
+                <Fret key={key + 'F'} id={id} zero={num === 0} value={value} active={active} />
+            ))}
+            {/* (id, width, (active = false), (zero = false), value) */}
+            {/* <div className={`string__value ${active && 'string__value--selected'}`}>{value}</div> */}
+        </div>
+    );
+};
