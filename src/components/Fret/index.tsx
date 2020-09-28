@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import './styles.scss';
 
 export interface IFret {
+  key: string;
   zero?: boolean;
   active?: boolean;
   value: string;
