@@ -1,24 +1,17 @@
 import React, { FC } from 'react';
 import './styles.scss';
 import { Fret, IFret } from '../Fret';
-import { TOTAL_FRETS } from '../../constants/global';
+import { TOTAL_FRETS, TOTAL_NOTES } from '@constants';
 
 interface IStringEntity {
-    id: string;
-    config: IFret[];
+    id: number;
 }
 
-const frets = new Array(TOTAL_FRETS);
-for (var i = 0; i <= TOTAL_FRETS; i++) {
-    frets.push(<Fret key={i + 'S'} zero={i === 0} id={i + 'F'} value={1} />);
-}
+export const StringEntity: FC<IStringEntity> = ({ id }) => {
+    const frets = new Array(TOTAL_FRETS);
+    for (let i = 0; i <= TOTAL_FRETS; i++) {
+        frets.push(<Fret key={id + 'F'} id={(i + id) % TOTAL_NOTES} zero={i === 0} />);
+    }
 
-export const StringEntity: FC<IStringEntity> = ({ id, config }) => (
-    <div className="string">
-        {config.map(({ key, value, active }, num) => (
-            <Fret key={key + 'F'} id={id} zero={num === 0} value={value} active={active} />
-        ))}
-        {/* (id, width, (active = false), (zero = false), value) */}
-        {/* <div className={`string__value ${active && 'string__value--selected'}`}>{value}</div> */}
-    </div>
-);
+    return <div className="string">{frets.map(fret => fret)}</div>;
+};

@@ -65,6 +65,9 @@ module.exports = {
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx", ".json", ".styl", ".css", ".sass"],
+    alias: {
+      '@constants': path.resolve(__dirname, "src/constants/index.ts"),
+    },
   },
   devtool: "inline-source-map",
   plugins: [
