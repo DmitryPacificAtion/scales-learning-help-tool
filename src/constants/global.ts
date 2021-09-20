@@ -1,5 +1,7 @@
 export const TOTAL_FRETS = 24;
 export const FRET_WIDTH = 76;
+export const TOTAL_NOTES = 12;
+
 export const GLOBAL_CONFIG = {
     0: {
         normal: 'C',

@@ -11,19 +11,16 @@ for (var i = 0, width = FRET_WIDTH; i <= TOTAL_FRETS; i++, width--) {
   } as IFret);
 }
 
-const Fingerboard = () => {
-  // TODO: Лады вместить в струны, а не наоборот
-  return (
-    <div className="fingerboard">
-      {frets.map((data, index) => (
-        <Fret
-          key={index + 'F'}
-          id={index + 'F'}
-          config={CHROMATIC_SCALE}
-          {...data}
-        />))}
-    </div>
-  );
-};
+const Fingerboard = () => (
+  <div className="fingerboard">
+    {frets.map((data, index) => (
+      <Fret
+        key={index + 'F'}
+        id={index + 'F'}
+        config={CHROMATIC_SCALE}
+        {...data}
+      />))}
+  </div>
+);
 
 export default Fingerboard;
