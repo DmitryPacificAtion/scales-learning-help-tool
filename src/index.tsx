@@ -6,19 +6,19 @@ import rootReducer from './reducers';
 import App from './components/App';
 
 (function () {
-    const element = document.createElement("div");
-    element.setAttribute("id", "root");
-    document.body.appendChild(element);
+  const element = document.createElement("div");
+  element.setAttribute("id", "root");
+  document.body.appendChild(element);
 })();
 
 const store = createStore(
-    rootReducer,
-    // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  rootReducer
+  // window.__REDUX_DEVTxOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 ReactDOM.render(
-    <Provider store={store}>
-        <App />
-    </Provider>,
-    document.getElementById('root'),
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root'),
 );

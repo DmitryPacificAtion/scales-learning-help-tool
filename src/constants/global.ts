@@ -1,4 +1,5 @@
 export const TOTAL_FRETS = 24;
+export const FRET_WIDTH = 76;
 export const GLOBAL_CONFIG = {
     0: {
         normal: 'C',
@@ -61,33 +62,33 @@ export const GLOBAL_CONFIG = {
 
 export const ZERO_FRET = [
     {
-        key: 4,
+        position: 4,
         value: GLOBAL_CONFIG[4].normal,
         active: false,
 
     },
     {
-        key: 11,
+        position: 11,
         value: GLOBAL_CONFIG[11].normal,
         active: false,
     },
     {
-        key: 7,
+        position: 7,
         value: GLOBAL_CONFIG[7].normal,
         active: false,
     },
     {
-        key: 2,
+        position: 2,
         value: GLOBAL_CONFIG[2].normal,
         active: false,
     },
     {
-        key: 9,
+        position: 9,
         value: GLOBAL_CONFIG[9].normal,
         active: false,
     },
     {
-        key: 4,
+        position: 4,
         value: GLOBAL_CONFIG[4].normal,
         active: false,
     },
@@ -95,10 +96,10 @@ export const ZERO_FRET = [
 
 export const CHROMATIC_SCALE: any[] = [];
 for (var i = 0; i <= TOTAL_FRETS; i++) {
-    const fret = ZERO_FRET.map(str => ({
-        key: (i % 12) + str.key,
-        value: GLOBAL_CONFIG[(i + str.key) % 12].normal,
-        active: GLOBAL_CONFIG[(i + str.key) % 12].active,
+    const fret = ZERO_FRET.map(({ position }) => ({
+        position: (i % 12) + position,
+        value: GLOBAL_CONFIG[(i + position) % 12].normal,
+        active: GLOBAL_CONFIG[(i + position) % 12].active,
     }));
     CHROMATIC_SCALE.push(fret);
 };

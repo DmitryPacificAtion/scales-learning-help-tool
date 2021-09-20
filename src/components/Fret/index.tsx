@@ -1,18 +1,18 @@
-import React, { FC } from 'react';
+import React from 'react';
+import { StringEntity, IStringEntity } from '../String';
 import './styles.scss';
 
 export interface IFret {
-  id: number;
+  id: string;
+  config: IStringEntity[];
   width: number;
-  zero?: boolean;
-  active?: boolean;
-  value: string;
+  zero: boolean;
 }
 
-export const Fret = ({ id, width, active = false, zero = false, value }) => {
-  return (
-    <div key={id + 'F'} className={`fret ${zero && 'zero'}`} style={zero ? undefined : { width }}>
-        <span className={`fret__value ${active && 'fret__value--selected'}`}>{value}</span>
-    </div>
-  );
-};
+export const Fret = ({ id, width, config, zero}) => (
+  <div className={`fret ${zero && 'zero'}`} style={zero ? undefined : { width }}>
+    {config.map(({ value, active }) => (
+      <StringEntity key={id+'S'} value={value} active={active} />
+  ))}
+  </div>
+);

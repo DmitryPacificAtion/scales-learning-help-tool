@@ -1,20 +1,29 @@
 import React from 'react';
 import './styles.scss';
-import StringEntity from '../String';
-import { CHROMATIC_SCALE } from '../../constants/global';
+import { Fret, IFret } from '../Fret';
+import { TOTAL_FRETS, FRET_WIDTH, CHROMATIC_SCALE } from '../../constants/global';
+
+const frets = new Array();
+for (var i = 0, width = FRET_WIDTH; i <= TOTAL_FRETS; i++, width--) {
+  frets.push({
+    width,
+    zero: i === 0
+  } as IFret);
+}
 
 const Fingerboard = () => {
-    // TODO: Лады вместить в струны, а не наоборот
-    return (
-        <div className="fingerboard">
-            <StringEntity key={0 + 'S'} />
-            <StringEntity key={1 + 'S'} />
-            <StringEntity key={2 + 'S'} />
-            <StringEntity key={3 + 'S'} />
-            <StringEntity key={4 + 'S'} />
-            <StringEntity key={5 + 'S'} />
-        </div>
-    );
+  // TODO: Лады вместить в струны, а не наоборот
+  return (
+    <div className="fingerboard">
+      {frets.map((data, index) => (
+        <Fret
+          key={index + 'F'}
+          id={index + 'F'}
+          config={CHROMATIC_SCALE}
+          {...data}
+        />))}
+    </div>
+  );
 };
 
 export default Fingerboard;
