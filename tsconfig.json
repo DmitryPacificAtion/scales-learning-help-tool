@@ -17,11 +17,7 @@
     "moduleResolution": "node",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "watch": true,
+    "watch": true
   },
-  "exclude": [
-    "./**/__tests__/*",
-    "./__tests__/**/*",
-    "./node_modules/**/*"
-  ],
+  "exclude": ["./**/__tests__/*", "./__tests__/**/*", "./node_modules/**/*"]
 }

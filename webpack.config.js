@@ -14,15 +14,15 @@ module.exports = {
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
-    publicPath: "/"
+    publicPath: "/",
   },
   optimization: {
     splitChunks: {
       cacheGroups: {
         styles: {
-          name: 'styles',
+          name: "styles",
           test: /\.css$/,
-          chunks: 'all',
+          chunks: "all",
           enforce: true,
         },
       },
@@ -42,15 +42,16 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: [MiniCssExtractPlugin.loader,
+        use: [
+          MiniCssExtractPlugin.loader,
           "css-loader",
           {
             loader: "sass-loader",
             options: {
               "include css": true,
-            }
+            },
           },
-          {loader: "required-loader"}
+          { loader: "required-loader" },
         ],
       },
       {
@@ -60,11 +61,20 @@ module.exports = {
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: ["file-loader"],
-      }
-    ]
+      },
+    ],
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".jsx", ".json", ".styl", ".css", ".sass"],
+    extensions: [
+      ".ts",
+      ".tsx",
+      ".js",
+      ".jsx",
+      ".json",
+      ".styl",
+      ".css",
+      ".sass",
+    ],
   },
   devtool: "inline-source-map",
   plugins: [
@@ -77,7 +87,7 @@ module.exports = {
     }),
     new webpack.HotModuleReplacementPlugin(),
     new MiniCssExtractPlugin({
-      filename: '[name].css',
+      filename: "[name].css",
       ignoreOrder: false,
     }),
   ],
@@ -89,4 +99,4 @@ module.exports = {
     hot: true,
     open: true,
   },
-}
+};

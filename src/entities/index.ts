@@ -1,5 +1,3 @@
-import instrumentType from './instrument-type';
+import instrumentType from "./instrument-type";
 
-export {
-    instrumentType,
-};
+export { instrumentType };
